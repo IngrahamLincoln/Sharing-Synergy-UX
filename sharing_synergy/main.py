@@ -36,7 +36,10 @@ def khelp():
     """)
 
 def main():
+    # create our command line argument parser
     parser = create_parser()
+
+    # get our parsed arguments
     args = parser.parse_args()
 
     if args.command == "add":
@@ -53,5 +56,6 @@ def main():
         kkeywords(args.feed_name, args.output_name)
     elif args.command == "publish":
         kpublish(args.output_name)
+    # The print_help() method is automatically made by the argparse library
     else:
         parser.print_help()
